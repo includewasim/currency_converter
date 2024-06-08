@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            background-color: lightblue;
+          
+        }
+        h1{
+            margin-bottom: 100px;
+        }
+    </style>
+        
+</head>
+<body>
+    <center>
+        <h1>Currency Converter</h1>
+        <div id="container">
+        <form >
+            <label for="doll">$</label>
+            <input type="number" step="any" placeholder="Enter Amount In $" id="doll">
+            <br><br>
+            <label for="rup">₹</label>
+            <input type="number" step="any" placeholder="Enter Amount In  ₹" id="rup">
+        </form>
+    </div>
+    </center>
+
+    <script>
+        let doll=document.getElementById("doll");
+        let rup=document.getElementById("rup");
+
+        doll.addEventListener("input",function()
+    {
+        let d=parseFloat(doll.value);
+        let r=84*d;
+        rup.value=r.toFixed(2);
+    })
+
+    rup.addEventListener("input",function()
+{
+    let r=parseFloat(rup.value);
+    let d=r/84;
+    doll.value=d.toFixed(2);
+})
+    </script>
+</body>
+</html>
